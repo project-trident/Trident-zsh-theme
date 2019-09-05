@@ -9,7 +9,6 @@
 # https://github.com/project-trident/alien
 # https://github.com/project-trident/promptlib-zsh
 # https://github.com/project-trident/zsh-256color
-# https://github.com/project-trident/fonts
 
 #########################################
 #########################################
@@ -119,7 +118,7 @@ fi
 
 # copy down primary ZSH config file
 echo ~~Downloading Main ZSH Script~~
-curl -L https://raw.githubusercontent.com/project-trident/Trident-zsh-theme/master/.zshrc > ~/.zshrc
+curl -L https://raw.githubusercontent.com/project-trident/trident-zsh-theme/master/.zshrc > ~/.zshrc
 if [ $? -eq 0 ]; then
     echo Main ZSH Script downloaded
 else
