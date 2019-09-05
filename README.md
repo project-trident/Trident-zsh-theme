@@ -11,5 +11,5 @@ https://github.com/project-trident/antigen
 https://github.com/project-trident/alien
 https://github.com/project-trident/promptlib-zsh
 https://github.com/project-trident/zsh-256color
-
+https://github.com/project-trident/zsh-async
 
