@@ -9,39 +9,7 @@
 # https://github.com/project-trident/alien
 # https://github.com/project-trident/promptlib-zsh
 # https://github.com/project-trident/zsh-256color
-
-#########################################
-#########################################
-
-# Install Powerline fonts
-echo  ~~Installing Powerline Fonts~~
-# clone repo
-git clone https://github.com/project-trident/fonts.git --depth=1
-if [ $? -eq 0 ]; then
-    echo Powerline Fonts clone successful
-else
-    echo Powerline Fonts clone failed
-    exit 1
-fi
-# install fonts
-cd fonts
-if [ $? -eq 0 ]; then
-    echo Fonts Installed
-else
-    echo Install Failed
-    exit 1
-fi
-# clean-up a bit
-cd ..
-rm -rf fonts
-# update the font cache
-fc-cache -vf
-if [ $? -eq 0 ]; then
-    echo Font Cache Updated
-else
-    echo Font Cache Not Updated
-    exit 1
-fi
+# https://github.com/project-trident/fonts
 
 #########################################
 #########################################
@@ -58,6 +26,7 @@ fi
 
 # install antigen
 echo ~~Installing Antigen~~
+mkdir ~/.zsh
 # git clone https://github.com/zsh-users/antigen ~/.zsh/antigen
 curl -L https://raw.githubusercontent.com/project-trident/antigen/master/bin/antigen.zsh > ~/.zsh/antigen.zsh
 if [ $? -eq 0 ]; then
@@ -118,11 +87,10 @@ fi
 
 # copy down primary ZSH config file
 echo ~~Downloading Main ZSH Script~~
-curl -L https://raw.githubusercontent.com/project-trident/trident-zsh-theme/master/.zshrc > ~/.zshrc
+curl -L https://raw.githubusercontent.com/project-trident/Trident-zsh-theme/master/.zshrc > ~/.zshrc
 if [ $? -eq 0 ]; then
     echo Main ZSH Script downloaded
 else
     echo Main ZSH Script download failed
     exit 1
 fi
-
