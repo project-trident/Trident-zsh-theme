@@ -14,6 +14,40 @@
 #########################################
 #########################################
 
+
+# Install Powerline fonts
+echo  ~~Installing Powerline Fonts~~
+# clone repo
+git clone https://github.com/project-trident/fonts.git --depth=1
+if [ $? -eq 0 ]; then
+    echo Powerline Fonts clone successful
+else
+    echo Powerline Fonts clone failed
+    exit 1
+fi
+# install fonts
+cd fonts
+if [ $? -eq 0 ]; then
+    echo Fonts Installed
+else
+    echo Install Failed
+    exit 1
+fi
+# clean-up a bit
+#cd ..
+#rm -rf fonts
+# update the font cache
+fc-cache -vf
+if [ $? -eq 0 ]; then
+    echo Font Cache Updated
+else
+    echo Font Cache Not Updated
+    exit 1
+fi
+
+#########################################
+#########################################
+
 # install ohmyzsh
 echo ~~Installing Oh-My-ZSH~~
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/project-trident/oh-my-zsh/master/tools/install.sh)"
@@ -23,6 +57,9 @@ else
     echo OhMyZSH Install Failed
     exit 1
 fi
+
+#########################################
+#########################################
 
 # install antigen
 echo ~~Installing Antigen~~
@@ -94,3 +131,9 @@ else
     echo Main ZSH Script download failed
     exit 1
 fi
+
+#########################################
+#########################################
+
+echo The Trident ZSH Theme is not installed, please restart your terminal to finalize the ZSH init scripts.
+echo If have any issues, please report them here: https://github.com/project-trident/trident-zsh-theme/issues
