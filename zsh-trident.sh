@@ -9,7 +9,6 @@
 # https://github.com/project-trident/alien
 # https://github.com/project-trident/promptlib-zsh
 # https://github.com/project-trident/zsh-256color
-# https://github.com/project-trident/fonts
 
 #########################################
 #########################################
@@ -18,6 +17,7 @@
 # Install Powerline fonts
 echo  ~~Installing Powerline Fonts~~
 # clone repo
+cd /tmp/
 git clone https://github.com/project-trident/fonts.git --depth=1
 if [ $? -eq 0 ]; then
     echo Powerline Fonts clone successful
@@ -25,17 +25,17 @@ else
     echo Powerline Fonts clone failed
     exit 1
 fi
+
 # install fonts
 cd fonts
+sh ./install.sh
 if [ $? -eq 0 ]; then
     echo Fonts Installed
 else
     echo Install Failed
     exit 1
 fi
-# clean-up a bit
-#cd ..
-#rm -rf fonts
+
 # update the font cache
 fc-cache -vf
 if [ $? -eq 0 ]; then
@@ -44,6 +44,9 @@ else
     echo Font Cache Not Updated
     exit 1
 fi
+
+# move back to ~
+cd ~
 
 #########################################
 #########################################
