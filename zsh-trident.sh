@@ -127,7 +127,8 @@ fi
 
 # copy down primary ZSH config file
 echo ~~Downloading Main ZSH Script~~
-curl -L https://raw.githubusercontent.com/project-trident/Trident-zsh-theme/master/.zshrc > ~/.zshrc
+curl -L https://raw.githubusercontent.com/project-trident/trident-zsh-theme/785aecff872736f128c15bdf459ec96baa421324/.zshrc > ~/.zshrc
+
 if [ $? -eq 0 ]; then
     echo Main ZSH Script downloaded
 else
