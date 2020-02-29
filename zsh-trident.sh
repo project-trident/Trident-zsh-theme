@@ -53,7 +53,7 @@ cd ~
 
 # install ohmyzsh
 echo ~~Installing Oh-My-ZSH~~
-sh -c "$(curl -fsSL https://raw.githubusercontent.com/project-trident/oh-my-zsh/master/tools/install.sh)"
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 if [ $? -eq 0 ]; then
     echo OhMyZSH Installed
 else
@@ -66,9 +66,7 @@ fi
 
 # install antigen
 echo ~~Installing Antigen~~
-mkdir ~/.zsh
-# git clone https://github.com/zsh-users/antigen ~/.zsh/antigen
-curl -L https://raw.githubusercontent.com/project-trident/antigen/master/bin/antigen.zsh > ~/.zsh/antigen.zsh
+curl -L git.io/antigen > antigen.zsh
 if [ $? -eq 0 ]; then
     echo Antigen ZSH Script downloaded
 else
@@ -81,7 +79,9 @@ fi
 
 # install alien
 echo ~~Installing Alien Theme~~
-git clone https://github.com/eendroroy/alien ~/.zsh/alien/
+git clone https://github.com/eendroroy/alien.git
+cd alien
+git submodule update --init --recursive
 if [ $? -eq 0 ]; then
     echo Alien Theme cloned successfully
 else
@@ -95,7 +95,7 @@ fi
 # download and install submodules
 ~Installing Required SubModules~~
 # instal promptlib
-git clone https://github.com/eendroroy/promptlib-zsh.git ~/.zsh/alien/libs/promptlib
+git clone https://github.com/eendroroy/promptlib-zsh.git ~/alien/libs/promptlib
 if [ $? -eq 0 ]; then
     echo promptlib clone successful
 else
@@ -104,7 +104,7 @@ else
 fi
 
 # instal zsh-alien
-git clone https://github.com/mafredri/zsh-async.git ~/.zsh/alien/libs/zsh-async
+git clone https://github.com/mafredri/zsh-async.git ~/alien/libs/zsh-async
 if [ $? -eq 0 ]; then
     echo zsh-async clone successful
 else
@@ -113,7 +113,7 @@ else
 fi
 
 # instal zsh-256-color
-git clone https://github.com/chrissicool/zsh-256color.git ~/.zsh/alien/libs/zsh-256color
+git clone https://github.com/chrissicool/zsh-256color.git ~/alien/libs/zsh-256color
 if [ $? -eq 0 ]; then
     echo zsh-256color clone successful
 else
@@ -127,7 +127,7 @@ fi
 
 # copy down primary ZSH config file
 echo ~~Downloading Main ZSH Script~~
-curl -L https://raw.githubusercontent.com/project-trident/trident-zsh-theme/785aecff872736f128c15bdf459ec96baa421324/.zshrc > ~/.zshrc
+curl -L https://raw.githubusercontent.com/project-trident/trident-zsh-theme/master/.zshrc > ~/.zshrc
 
 if [ $? -eq 0 ]; then
     echo Main ZSH Script downloaded
