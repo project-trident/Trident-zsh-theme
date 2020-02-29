@@ -80,9 +80,7 @@ fi
 
 # install alien
 echo ~~Installing Alien Theme~~
-git clone https://github.com/eendroroy/alien.git
-cd alien
-git submodule update --init --recursive
+antigen theme eendroroy/alien alien
 if [ $? -eq 0 ]; then
     echo Alien Theme cloned successfully
 else
