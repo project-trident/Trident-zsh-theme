@@ -2,7 +2,7 @@
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
 # Path to your oh-my-zsh installation.
-export ZSH="~/.oh-my-zsh"
+export ZSH=".oh-my-zsh"
 
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
@@ -26,9 +26,9 @@ antigen bundle command-not-found
 # Syntax highlighting bundle.
 antigen bundle zsh-users/zsh-syntax-highlighting
 
-source ~/alien/alien.zsh
+source ~/.antigen/bundles/eendroroy/alien/alien.zsh
 # Load the theme.
-antigen theme ~/alien alien
+antigen theme ~/.antigen/bundles/eendroroy/alien/alien alien
 
 # Tell Antigen that you're done.
 antigen apply
@@ -93,7 +93,7 @@ antigen apply
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(git)
 
-source $ZSH/oh-my-zsh.sh
+source ~/.oh-my-zsh/oh-my-zsh.sh
 
 # User configuration
 
